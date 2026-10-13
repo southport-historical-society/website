@@ -421,7 +421,8 @@ a:hover { color: var(--gold-dark); }
   .board-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 560px) {
-  .board-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
+  .board-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .board-member h4 { font-size: 0.85rem; }
 }
 
 /* photo gallery grid (e.g. Garrison House) */
@@ -526,4 +527,49 @@ a:hover { color: var(--gold-dark); }
 }
 @media (max-width: 700px) {
   .grid { grid-template-columns: 1fr !important; }
+}
+
+/* ---- lightweight carousel (multi-across desktop, 1-at-a-time on phones) ---- */
+.carousel { position: relative; margin: 24px 0; }
+.carousel-viewport { overflow: hidden; border-radius: 4px; }
+.carousel-track { display: flex; transition: transform 0.35s ease; }
+.carousel-slide { box-sizing: border-box; padding: 0 8px; }
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+.carousel-prev, .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+.carousel-prev { left: 8px; }
+.carousel-next { right: 8px; }
+.carousel-prev:disabled, .carousel-next:disabled { opacity: 0.35; cursor: default; }
+.carousel-dots { text-align: center; margin-top: 10px; }
+.carousel-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #bbb;
+  margin: 0 4px;
+  padding: 0;
+  cursor: pointer;
+}
+.carousel-dot.active { background: #000066; }
+/* photo-only grids: stay 2-across on phones, never a deep single stack */
+@media (max-width: 700px) {
+  .grid.keep-2 { grid-template-columns: repeat(2, 1fr) !important; }
 }
