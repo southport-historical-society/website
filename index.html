@@ -157,6 +157,25 @@
 
   <script src="assets/js/announcements.js"></script>
   <script>
+    /* Base-path shim: lets the same files work on the staging subpath (/website/)
+       and on the root domain. If the page is served under /website/, root-relative
+       links are prefixed accordingly; on the real domain this is a no-op.
+       Safe to keep permanently. */
+    (function () {
+      var base = "";
+      if (location.pathname === "/website" || location.pathname.indexOf("/website/") === 0) {
+        base = "/website";
+      }
+      if (!base) return;
+      var links = document.querySelectorAll('a[href^="/"]');
+      for (var i = 0; i < links.length; i++) {
+        var h = links[i].getAttribute("href");
+        if (h.charAt(1) === "/") continue;
+        links[i].setAttribute("href", base + h);
+      }
+    })();
+  </script>
+  <script>
     (function () {
       var btn = document.getElementById("nav-toggle");
       var header = document.getElementById("site-header");
