@@ -76,15 +76,22 @@
   <main>
     <section class="page-hero"><div class="container"><h1>Southport Historic Tours</h1></div></section>
     <section class="page-content"><div class="container">
-<div class="grid cols-3 tidy">
- <div><a href="../../assets/img/northrup.jpg"><img src="../../assets/img/northrup.jpg" alt="" loading="lazy"></a></div>
- <div><a href="../../assets/img/river-pilots.jpg"><img src="../../assets/img/river-pilots.jpg" alt="" loading="lazy"></a></div>
- <div><a href="../../assets/img/brunswick-inn.jpg"><img src="../../assets/img/brunswick-inn.jpg" alt="Southport Historic Tours" loading="lazy"></a></div>
- <div><a href="../../assets/img/smithville.jpg"><img src="../../assets/img/smithville.jpg" alt="" loading="lazy"></a></div>
- <div><a href="../../assets/img/hospital.jpg"><img src="../../assets/img/hospital.jpg" alt="" loading="lazy"></a></div>
- <div><a href="../../assets/img/thomas-mann-thompson.jpg"><img src="../../assets/img/thomas-mann-thompson.jpg" alt="" loading="lazy"></a></div>
- <div><a href="../../assets/img/war1812.jpg"><img src="../../assets/img/war1812.jpg" alt="" loading="lazy"></a></div>
- <div><a href="../../assets/img/walker-pyke-1.jpg"><img src="../../assets/img/walker-pyke-1.jpg" alt="" loading="lazy"></a></div>
+<div class="carousel" data-visible="3">
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      <div class="carousel-slide"><a href="../../assets/img/northrup.jpg"><img src="../../assets/img/northrup.jpg" alt="" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/river-pilots.jpg"><img src="../../assets/img/river-pilots.jpg" alt="" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/brunswick-inn.jpg"><img src="../../assets/img/brunswick-inn.jpg" alt="Southport Historic Tours" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/smithville.jpg"><img src="../../assets/img/smithville.jpg" alt="" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/hospital.jpg"><img src="../../assets/img/hospital.jpg" alt="" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/thomas-mann-thompson.jpg"><img src="../../assets/img/thomas-mann-thompson.jpg" alt="" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/war1812.jpg"><img src="../../assets/img/war1812.jpg" alt="" loading="lazy"></a></div>
+      <div class="carousel-slide"><a href="../../assets/img/walker-pyke-1.jpg"><img src="../../assets/img/walker-pyke-1.jpg" alt="" loading="lazy"></a></div>
+    </div>
+  </div>
+  <button type="button" class="carousel-prev" aria-label="Previous photos">&#8249;</button>
+  <button type="button" class="carousel-next" aria-label="Next photos">&#8250;</button>
+  <div class="carousel-dots"></div>
 </div>
 <div class="grid cols-2 middle">
  <div><img src="../../assets/img/PocketSights-flyer-replace-picture-of-fort-at-bottom-of-page.png" alt="" loading="lazy"></div>
@@ -201,5 +208,7 @@
         })(items[i]);
       }
     })();
+  </script>
+  <script src="../../assets/js/carousel.js" defer></script>
 </body>
 </html>
