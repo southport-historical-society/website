@@ -76,37 +76,19 @@
   <main>
     <section class="page-hero"><div class="container"><h1>Holiday Home Tour</h1></div></section>
     <section class="page-content"><div class="container"><h2>Celebrate the Holidays Southport Style</h2>
-<style>
-.tour-carousel{position:relative;margin:1.5rem 0}
-.carousel-viewport{overflow:hidden}
-.carousel-track{display:flex;transition:transform .4s ease;margin:0 -.35rem}
-.carousel-slide{flex:0 0 33.3333%;max-width:33.3333%;padding:0 .35rem;box-sizing:border-box}
-.carousel-slide img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;border-radius:4px}
-.carousel-prev,.carousel-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,102,.75);color:#fff;border:none;border-radius:50%;width:2.6rem;height:2.6rem;font-size:1.25rem;line-height:1;cursor:pointer;z-index:2}
-.carousel-prev{left:.3rem}.carousel-next{right:.3rem}
-.carousel-prev:hover,.carousel-next:hover{background:#000066}
-</style>
-<div class="tour-carousel" id="tourCarousel">
-<button class="carousel-prev" aria-label="Previous photos">&#10094;</button>
-<div class="carousel-viewport"><div class="carousel-track">
-<div class="carousel-slide"><a href="../../assets/img/Christmas-Tour-of-Homes.jpg"><img src="../../assets/img/Christmas-Tour-of-Homes.jpg" alt="Holiday Tour of Homes" loading="lazy"></a></div>
-<div class="carousel-slide"><a href="../../assets/img/city_christmas.jpg"><img src="../../assets/img/city_christmas.jpg" alt="Holiday Tour of Homes" loading="lazy"></a></div>
-<div class="carousel-slide"><a href="../../assets/img/jail_300px.jpg"><img src="../../assets/img/jail_300px.jpg" alt="Old Jail" loading="lazy"></a></div>
-<div class="carousel-slide"><a href="../../assets/img/house_300px.jpg"><img src="../../assets/img/house_300px.jpg" alt="Tour of Homes" loading="lazy"></a></div>
-</div></div>
-<button class="carousel-next" aria-label="Next photos">&#10095;</button>
+<div class="carousel" data-visible="3">
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      <div class="carousel-slide"><img src="../../assets/img/Christmas-Tour-of-Homes.jpg" alt="Holiday Tour of Homes" loading="lazy"></div>
+      <div class="carousel-slide"><img src="../../assets/img/city_christmas.jpg" alt="Holiday Tour of Homes" loading="lazy"></div>
+      <div class="carousel-slide"><img src="../../assets/img/jail_300px.jpg" alt="Old Jail" loading="lazy"></div>
+      <div class="carousel-slide"><img src="../../assets/img/house_300px.jpg" alt="Tour of Homes" loading="lazy"></div>
+    </div>
+  </div>
+  <button type="button" class="carousel-prev" aria-label="Previous photos">&#8249;</button>
+  <button type="button" class="carousel-next" aria-label="Next photos">&#8250;</button>
+  <div class="carousel-dots"></div>
 </div>
-<script>
-(function(){var c=document.getElementById('tourCarousel');if(!c)return;
-var track=c.querySelector('.carousel-track'),slides=track.children.length,visible=3,pos=0;
-var max=slides-visible;
-function slideW(){return track.children[0].getBoundingClientRect().width;}
-function go(d){pos=(pos+d+max+1)%(max+1);track.style.transform='translateX('+(-pos*slideW())+'px)';}
-c.querySelector('.carousel-prev').addEventListener('click',function(){go(-1);});
-c.querySelector('.carousel-next').addEventListener('click',function(){go(1);});
-window.addEventListener('resize',function(){track.style.transform='translateX('+(-pos*slideW())+'px)';});
-})();
-</script>
 
 <h3>About the tour</h3><p>Part of the annual Southport’s Winterfest Festival, the Holiday Home Tour has been sponsored by the Southport Historical Society since 2000.</p> <p>Due to the generosity of the community members that open their homes, the Home Tour Committee, and SHS docents, the tour is our largest fundraiser. Proceeds from the tour are used to further the Society’s mission to bring together persons interested in the history of Southport and to promote a better appreciation of our heritage.</p> <p>Funds raised from this event will enable the Society to continue to maintain the Old Jail on Nash Street, provide improvements to the Fort Johnston museum, make improvements at the Smithville Burying Ground, fund a scholarship at South Brunswick High School, and continue to enhance the Susie Carson Research Room.</p> <p>If you want to mark your calendar for future Home Tours, it is always held on the second Saturday in December.</p> <p>We are always in need of homes for the tour, so if you would like to participate please contact us at info@southporthistoricalsociety.org.</p>
     </div></section>
@@ -219,5 +201,6 @@ window.addEventListener('resize',function(){track.style.transform='translateX('+
         })(items[i]);
       }
     })();
+<script src="../../assets/js/carousel.js" defer></script>
 </body>
 </html>
