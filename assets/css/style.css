@@ -423,3 +423,21 @@ a:hover { color: var(--gold-dark); }
 @media (max-width: 560px) {
   .board-grid { grid-template-columns: 1fr; max-width: 340px; margin-left: auto; margin-right: auto; }
 }
+
+/* photo gallery grid (e.g. Garrison House) */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  display: block;
+}
+@media (max-width: 700px) {
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+}
