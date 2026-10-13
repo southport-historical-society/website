@@ -82,14 +82,14 @@
      to the chosen backend endpoint (Formspree or Google Form) and add any
      required hidden fields. Submissions should route to info@southporthistoricalsociety.org.
      Do NOT point this at the old WordPress site. -->
-<form class="contact-form" action="#" method="post">
+<form class="contact-form" action="https://formspree.io/f/xdealqvn" method="post">
   <p class="form-row">
     <label for="cf-name">Name</label>
     <input type="text" id="cf-name" name="your_name" required autocomplete="name">
   </p>
   <p class="form-row">
     <label for="cf-email">Email</label>
-    <input type="email" id="cf-email" name="your_email" required autocomplete="email">
+    <input type="email" id="cf-email" name="_replyto" required autocomplete="email">
   </p>
   <p class="form-row">
     <label for="cf-subject">Subject</label>
@@ -99,7 +99,10 @@
     <label for="cf-message">Message</label>
     <textarea id="cf-message" name="your_message" rows="8" required></textarea>
   </p>
-  <p class="form-row">
+  <p class="form-row" style="display:none">
+    <label>Leave blank<input type="text" name="_gotcha"></label>
+  </p>
+<p class="form-row">
     <button type="submit" class="btn">Submit</button>
   </p>
 </form>
