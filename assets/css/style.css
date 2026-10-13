@@ -227,7 +227,7 @@ a:hover { color: var(--gold-dark); }
 
 /* ---------- Footer ---------- */
 .site-footer {
-  background: var(--ink);
+  background: var(--navy);
   color: #cfcfcf;
   padding: 48px 0 0;
   font-size: 14px;
@@ -248,7 +248,7 @@ a:hover { color: var(--gold-dark); }
 .site-footer a { color: #cfcfcf; text-decoration: none; }
 .site-footer a:hover { color: var(--gold); }
 .footer-bottom {
-  border-top: 1px solid #2c2e30;
+  border-top: 1px solid rgba(255,255,255,0.25);
   padding: 16px 0;
   text-align: center;
   font-size: 13px;
@@ -281,6 +281,14 @@ a:hover { color: var(--gold-dark); }
   }
   .site-header { position: relative; }
   .site-header.nav-open .main-nav { display: block; }
+  .main-nav ul ul {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #e3e3e3;
+  }
+  .main-nav li.submenu-open > ul { display: flex; }
+  .main-nav li.has-sub > a::after { content: " ▾"; }
   .main-nav > ul { flex-direction: column; }
   .main-nav ul ul {
     display: block;
