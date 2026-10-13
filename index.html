@@ -66,6 +66,7 @@
             </ul>
           </li>
           <li><a href="/southport-historical-society-blog/">Blog</a></li>
+          <li><a href="https://www.zeffy.com/en-US/ticketing/brunswick-county-old-jail-bookstore">Store</a></li>
           <li><a href="/contact-shs/">Contact Us</a></li>
         </ul>
       </nav>
@@ -126,6 +127,7 @@
             <li><a href="/get-involved/">Get Involved</a></li>
             <li><a href="/get-involved/become-a-member/">Become a Member</a></li>
             <li><a href="/get-involved/volunteer-opportunities/">Volunteer Opportunities</a></li>
+            <li><a href="https://www.zeffy.com/en-US/ticketing/brunswick-county-old-jail-bookstore">Store</a></li>
             <li><a href="/privacy-policy/">Privacy Policy</a></li>
           </ul>
         </div>
@@ -161,6 +163,28 @@
         var open = header.classList.toggle("nav-open");
         btn.setAttribute("aria-expanded", open ? "true" : "false");
       });
+      // Mobile: first tap on a parent item expands its submenu instead of navigating
+      var items = document.querySelectorAll(".main-nav > ul > li");
+      for (var i = 0; i < items.length; i++) {
+        (function (li) {
+          var link = null, sub = null, c;
+          for (var j = 0; j < li.children.length; j++) {
+            c = li.children[j];
+            if (c.tagName === "A") link = c;
+            if (c.tagName === "UL") sub = c;
+          }
+          if (link && sub) {
+            li.classList.add("has-sub");
+            link.addEventListener("click", function (e) {
+              var mobile = window.getComputedStyle(btn).display !== "none";
+              if (mobile && !li.classList.contains("submenu-open")) {
+                e.preventDefault();
+                li.classList.add("submenu-open");
+              }
+            });
+          }
+        })(items[i]);
+      }
     })();
   </script>
 </body>
