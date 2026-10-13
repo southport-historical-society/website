@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# STAGING ONLY — this block must be replaced with an allow-all robots.txt
+# (or deleted) at the real-domain cutover, or the live site won't be indexed.
