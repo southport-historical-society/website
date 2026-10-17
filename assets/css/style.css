@@ -336,6 +336,7 @@ a:hover { color: var(--gold-dark); }
   color: var(--gray);
   margin-top: 8px;
 }
+.page-content figure.photo-right { float: right; max-width: 320px; margin: 4px 0 20px 28px; }
 .page-content blockquote {
   border-left: 4px solid var(--gold);
   margin: 24px 0;
@@ -576,4 +577,7 @@ a:hover { color: var(--gold-dark); }
 /* photo-only grids: stay 2-across on phones, never a deep single stack */
 @media (max-width: 700px) {
   .grid.keep-2 { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 700px) {
+  .page-content figure.photo-right { float: none; max-width: 100%; margin: 20px 0; }
 }
