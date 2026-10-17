@@ -1,18 +1,17 @@
-/* SHS lightweight carousel: multi-across on desktop, 1-at-a-time swipe on phones.
+/* SHS carousel: one large photo at a time, with prev/next arrows, dots,
+   a "photo N of M" counter, and touch swipe.
    Expected markup:
-     <div class="carousel" data-visible="3">
+     <div class="carousel">
        <div class="carousel-viewport"><div class="carousel-track">
          <div class="carousel-slide"><img ...></div> ...
        </div></div>
-       <button class="carousel-prev" aria-label="Previous photos">&#8249;</button>
-       <button class="carousel-next" aria-label="Next photos">&#8250;</button>
+       <button class="carousel-prev" aria-label="Previous photo">&#8249;</button>
+       <button class="carousel-next" aria-label="Next photo">&#8250;</button>
        <div class="carousel-dots"></div>
      </div>
-   data-visible sets desktop slides visible (default 3); phones always show 1. */
+   NOTE: older markup may carry data-visible="3" from the previous multi-across
+   design. It is intentionally ignored; this carousel always shows one photo. */
 (function () {
-  function visibleCount(el) {
-    return window.innerWidth <= 700 ? 1 : parseInt(el.dataset.visible || "3", 10);
-  }
   function init(car) {
     var track = car.querySelector(".carousel-track");
     var slides = Array.prototype.slice.call(track.children);
@@ -20,32 +19,30 @@
     var next = car.querySelector(".carousel-next");
     var dotsWrap = car.querySelector(".carousel-dots");
     var viewport = car.querySelector(".carousel-viewport");
-    var idx = 0, vis = 3, maxIdx = 0, dots = [];
-    function layout() {
-      vis = visibleCount(car);
-      maxIdx = Math.max(0, slides.length - vis);
-      if (idx > maxIdx) idx = maxIdx;
-      var w = 100 / vis;
-      slides.forEach(function (s) { s.style.flex = "0 0 " + w + "%"; });
-      dotsWrap.innerHTML = "";
-      dots = [];
-      for (var i = 0; i <= maxIdx; i++) {
-        (function (i) {
-          var d = document.createElement("button");
-          d.className = "carousel-dot";
-          d.type = "button";
-          d.setAttribute("aria-label", "Go to slide " + (i + 1));
-          d.addEventListener("click", function () { go(i); });
-          dotsWrap.appendChild(d);
-          dots.push(d);
-        })(i);
-      }
-      go(idx);
+    if (!track || !slides.length || !prev || !next || !dotsWrap || !viewport) return;
+    var idx = 0;
+    var maxIdx = slides.length - 1;
+    var dots = [];
+    var count = document.createElement("div");
+    count.className = "carousel-count";
+    count.setAttribute("aria-live", "polite");
+    dotsWrap.parentNode.insertBefore(count, dotsWrap.nextSibling);
+    for (var i = 0; i <= maxIdx; i++) {
+      (function (i) {
+        var d = document.createElement("button");
+        d.className = "carousel-dot";
+        d.type = "button";
+        d.setAttribute("aria-label", "Go to photo " + (i + 1));
+        d.addEventListener("click", function () { go(i); });
+        dotsWrap.appendChild(d);
+        dots.push(d);
+      })(i);
     }
     function go(i) {
       idx = Math.max(0, Math.min(maxIdx, i));
-      track.style.transform = "translateX(-" + idx * (100 / vis) + "%)";
+      track.style.transform = "translateX(-" + idx * 100 + "%)";
       dots.forEach(function (d, j) { d.classList.toggle("active", j === idx); });
+      count.textContent = "Photo " + (idx + 1) + " of " + slides.length;
       prev.disabled = idx === 0;
       next.disabled = idx === maxIdx;
     }
@@ -59,8 +56,7 @@
       if (Math.abs(dx) > 40) go(idx + (dx < 0 ? 1 : -1));
       sx = null;
     }, { passive: true });
-    window.addEventListener("resize", layout);
-    layout();
+    go(0);
   }
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".carousel").forEach(init);
