@@ -573,7 +573,7 @@ a:hover { color: var(--gold-dark); }
 }
 .carousel-dot.active { background: #000066; }
 .carousel-count { text-align: center; color: #666; font-size: 14px; margin-top: 6px; }
-.brick-cta { color: var(--navy); font-size: 20px; font-weight: 600; }
+.page-content p.brick-cta { color: var(--navy); font-size: 20px; font-weight: 600; }
 /* photo-only grids: stay 2-across on phones, never a deep single stack */
 @media (max-width: 700px) {
   .grid.keep-2 { grid-template-columns: repeat(2, 1fr) !important; }
