@@ -56,6 +56,22 @@
 
       row.appendChild(body);
       frag.appendChild(row);
+
+      /* PRESALE CHECKER (temporary - remove after Nov 16, 2026):
+         embed the eligibility checker directly below the Holiday Tour announcement. */
+      if (/35th Annual Holiday Tour of Homes/.test(a.title)) {
+        var checker = document.createElement("section");
+        checker.className = "presale-checker";
+        checker.setAttribute("aria-label", "Members-only presale eligibility checker");
+        checker.style.cssText = "background:#eef1f5;padding:2rem 1rem;margin:0 0 2rem;";
+        var frame = document.createElement("iframe");
+        frame.src = "https://script.google.com/macros/s/AKfycbxowp0mNC7ESpJkak4Knj3eOF5Y6BQjlz1uq4ccyczxI3_zH02ePBp0N5wr2UGGFr6v/exec";
+        frame.title = "2026 Holiday Tour of Homes - Members-Only Presale Eligibility Checker";
+        frame.loading = "lazy";
+        frame.style.cssText = "width:100%;max-width:760px;height:660px;border:0;display:block;margin:0 auto;background:#fff";
+        checker.appendChild(frame);
+        frag.appendChild(checker);
+      }
     });
     mount.appendChild(frag);
   }
