@@ -30,7 +30,15 @@
         img.src = a.image;
         img.alt = "";
         img.loading = "lazy";
-        media.appendChild(img);
+        /* Images link to the announcement's link when one is set. */
+        if (a.link) {
+          var imglink = document.createElement("a");
+          imglink.href = a.link;
+          imglink.appendChild(img);
+          media.appendChild(imglink);
+        } else {
+          media.appendChild(img);
+        }
         row.appendChild(media);
       }
 
