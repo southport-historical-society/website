@@ -1,5 +1,11 @@
 [
   {
+    "title": "35th Annual Holiday Tour of Homes",
+    "image": "assets/img/holiday-tour-of-homes-flyer.png",
+    "html": "<p>New this year: a guided Friday walking tour with small groups, scheduled home entries, and a closing reception with live music.</p>\n<p><strong>When:</strong> Friday, December 11 (1\u20135:30 PM) and Saturday, December 12 (11 AM\u20135 PM), 2026.</p>\n<p><strong>Friday walking tour:</strong> $75 per person, only 200 tickets.</p>\n<p><strong>Tickets:</strong> Public online ticket sale begins November 19 at 10:00 AM.</p>\n<p><a class=\"btn\" href=\"https://www.zeffy.com/en-US/ticketing/2026-southport-holiday-tour-of-homes-ticket-sale\">Purchase Tickets \u2014 Available November 19 at 10:00 a.m.</a></p>",
+    "link": "/programs/holiday-home-tour-2026/"
+  },
+  {
     "title": "Commemorative Brick Program \u2014 Order by November 30",
     "image": "assets/img/brick-program-flyer.png",
     "html": "<p>Honor a loved one and support SHS with a brick at historic Fort Johnston.</p>\n<p><strong>Cost:</strong> 4\u00d78 brick $100 (3 lines of text); 8\u00d78 brick $150 (6 lines)<br/><strong>Order:</strong> October 1\u2013November 30</p>\n<p>Use our new <a href=\"https://bricks.southporthistoricalsociety.org/\" rel=\"noopener noreferrer\" target=\"_blank\">Brick Finder tool</a> to purchase bricks, search and browse bricks, and find their locations.</p>",
@@ -22,12 +28,6 @@
     "image": "assets/img/picturing-southports-past-flyer.png",
     "html": "<p>Southport High School, 1922\u20131969, by Ricky Evans \u2014 donated in memory of Annelle Royal by Dr. Angela Wadsworth.</p>\n<p><strong>When:</strong> On display November 2026.</p>\n<p><strong>Where:</strong> Ft. Johnston Southport Museum and Visitors\u2019 Center.</p>",
     "link": null
-  },
-  {
-    "title": "35th Annual Holiday Tour of Homes",
-    "image": "assets/img/holiday-tour-of-homes-flyer.png",
-    "html": "<p>New this year: a guided Friday walking tour with small groups, scheduled home entries, and a closing reception with live music.</p>\n<p><strong>When:</strong> Friday, December 11 (1\u20135:30 PM) and Saturday, December 12 (11 AM\u20135 PM), 2026.</p>\n<p><strong>Friday walking tour:</strong> $75 per person, only 200 tickets.</p>\n<p><strong>Tickets:</strong> Public online ticket sale begins November 19 at 10:00 AM. Members current as of September 30 receive an email with the link to the presale.</p>\n<p>Check eligibility for the presale below.</p><p><a class=\"btn\" href=\"https://www.zeffy.com/en-US/ticketing/2026-southport-holiday-tour-of-homes-ticket-sale\">Purchase Tickets \u2014 Available November 19 at 10:00 a.m.</a></p>",
-    "link": "/programs/holiday-home-tour-2026/"
   },
   {
     "title": "In Case You Missed It!!",
